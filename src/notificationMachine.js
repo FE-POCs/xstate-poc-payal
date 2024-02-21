@@ -4,7 +4,8 @@ import { createMachine, assign } from 'xstate'
 const notificationMachine = createMachine({
     id: 'notification-stack',
     context: {
-        notifications: []
+        notifications: [],
+        defaultTimer: 2000
     },
     on: {
         ADD_NEW_NOTIFICATION: {
