@@ -10,7 +10,9 @@ const NotificationStack = (props) => {
             <Notification 
                id={notification.id}
                message={notification.message}
+               type={notification.type}
                removeNotification={props.removeNotification}
+
             />
         )
        })

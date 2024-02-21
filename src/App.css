@@ -1,3 +1,138 @@
 .App {
   text-align: center;
 }
+.toast-buttons { 
+  max-width: 700px; 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 15px; 
+  margin: 2em auto; 
+} 
+
+.toast-row { 
+  display: flex; 
+  justify-content: center; 
+  margin: 1em 0; 
+  padding: 1rem; 
+  flex-wrap: wrap; 
+} 
+
+button.custom-toast { 
+  padding: 0.5rem 1rem; 
+  border: none; 
+  color: #fff; 
+  font-weight: 500; 
+  border-radius: 5px; 
+  box-shadow: 2px 2px 10px
+      rgba(0, 0, 0, 0.785); 
+  cursor: pointer; 
+  width: 150px; 
+  margin: 0.5em; 
+  transition: filter 0.2s ease-in-out, 
+  transform 0.3s ease-in-out; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-size: 1rem; 
+  background-color: transparent; 
+  outline: none; 
+  background: #3498db; 
+  color: #fff; 
+} 
+
+button.success-toast { 
+  background-color: #2ecc71; 
+} 
+
+button.error-toast { 
+  background-color: #e74c3c; 
+} 
+
+button.info-toast { 
+  background-color: #3498db; 
+} 
+
+button.warning-toast { 
+  background-color: #f1c40f; 
+} 
+
+
+.toast { 
+  position: relative; 
+  bottom: 0px; 
+  right: 0px; 
+  max-width: 300px; 
+  background: #fff; 
+  padding: 0.5rem; 
+  border-radius: 4px; 
+  box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.3); 
+  z-index: 1; 
+  animation: slideInRight 0.3s 
+  ease-in-out forwards; 
+  transform: translateX(110%); 
+  margin-bottom: 1rem;
+} 
+
+.toast-closing { 
+   flex-basis: 20%;
+   cursor: pointer;
+} 
+
+.toast-wrapper { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+} 
+
+.toast-icon { 
+  padding: 0.35rem 0.5rem; 
+  font-size: 1.5rem; 
+} 
+
+.toast-message { 
+  flex: 1; 
+  font-size: 0.9rem; 
+  color: #000000; 
+  padding: 0.5rem; 
+} 
+
+.toast.toast-success { 
+  background: #95eab8; 
+} 
+
+.toast.toast-error { 
+  background: #efaca5; 
+} 
+
+.toast.toast-info { 
+  background: #bddaed; 
+} 
+
+.toast.toast-warning { 
+  background: #ead994; 
+} 
+
+@keyframes slideInRight { 
+  0% { 
+      transform: translateX(110%); 
+  } 
+
+  75% { 
+      transform: translateX(-10%); 
+  } 
+
+  100% { 
+      transform: translateX(0%); 
+  } 
+} 
+
+.notification-stack {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 700px;
+  max-width: 1000px;
+  overflow: scroll;
+  gap: 1rem;
+}

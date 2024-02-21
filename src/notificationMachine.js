@@ -5,7 +5,7 @@ const notificationMachine = createMachine({
     id: 'notification-stack',
     context: {
         notifications: [],
-        defaultTimer: 2000
+        defaultTimer: 4000
     },
     on: {
         ADD_NEW_NOTIFICATION: {

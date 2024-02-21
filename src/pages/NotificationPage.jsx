@@ -7,11 +7,11 @@ import { useMachine } from '@xstate/react';
 
 const NotificationPage = () => {
   const [state, sendAction] = useMachine(notificationMachine)
- 
+
   const addNewNotification = (message, type, customTimer) => {
     const uniqueId = uuidv4()
     const timer = customTimer ?? state.context.defaultTimer
-    sendAction({ type: 'ADD_NEW_NOTIFICATION', value: { id: uniqueId , message, type } })
+    sendAction({ type: 'ADD_NEW_NOTIFICATION', value: { id: uniqueId, message, type } })
     setTimeout(() => {
       sendAction({ type: 'REMOVE_NOTIFICATION', value: uniqueId })
     }, timer)
@@ -24,12 +24,18 @@ const NotificationPage = () => {
 
   return (
     <div>
-      <div>Notification Stack</div>
-      <button onClick={() => addNewNotification("New Success Notification", "Success")}>Success</button>
-      <button onClick={() => addNewNotification("New Warning Notification", "Warning")}>Warning</button>
-      <button onClick={() => addNewNotification("New Error Notification", "Error")}>Error</button>
-      <button onClick={() => addNewNotification("New Timer Success Notification", "Success", 7000)}>Success Timer</button>
-      <NotificationStack notifications={state.context.notifications} removeNotification={removeNotification} />
+      <h1>Notification Stack</h1>
+      <div className='toast-buttons'>
+        <div class="toast-row">
+          <button onClick={() => addNewNotification("New Success Notification", "success")} class="custom-toast success-toast">Success</button>
+          <button onClick={() => addNewNotification("New Warning Notification", "warning")} class="custom-toast warning-toast">Warning</button>
+          <button onClick={() => addNewNotification("New Error Notification", "error")} class="custom-toast error-toast">Error</button>
+          <button onClick={() => addNewNotification("New Timer Success Notification", "success", 7000)} class="custom-toast info-toast">Success Timer</button>
+        </div>
+      </div>
+     <div className='notification-stack'>
+       <NotificationStack notifications={state.context.notifications} removeNotification={removeNotification} />
+     </div>
     </div>
   )
 }
